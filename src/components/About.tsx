@@ -66,7 +66,7 @@ export default function About() {
           >
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-linear-to-r from-neon-blue to-neon-purple glow-purple">
               <div className="w-full h-full rounded-full bg-dark-bg overflow-hidden flex items-center justify-center">
-                <div className="text-6xl text-gray-600 font-bold"><img src="../assets/dev.jpg"></img></div>
+                <div className="text-6xl text-gray-600 font-bold"><img src="/assets/dev.jpg"></img></div>
               </div>
             </div>
           </motion.div>
