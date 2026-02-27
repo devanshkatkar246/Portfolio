@@ -52,7 +52,7 @@ const projects = [
     longDescription:
       "DigiTwin is a virtual digital replica of a student.It models academic behaviour using daily habit inputs . Predicts academic performance trends for 7,15 & 30 Days. Also allows what-if simulation to test habit changes.",
     github: "https://github.com/devanshkatkar246/DigiTwin",
-    liveDemo: "/under-construction",
+    liveDemo: "https://digitwin-1b46b.web.app/",
   },
 ];
 
