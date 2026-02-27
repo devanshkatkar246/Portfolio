@@ -72,7 +72,8 @@ export default function Hero() {
             View Projects
           </a>
           <a
-            href="/assets/DevaResume.pdf"
+            href="/assets/DevResume.pdf"
+            download="Devansh_Katkar_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-linear-to-r from-neon-blue to-neon-purple text-white rounded-full font-bold tracking-widest uppercase hover:opacity-90 transition-all duration-300 glow-purple"
