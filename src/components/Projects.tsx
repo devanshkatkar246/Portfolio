@@ -49,10 +49,19 @@ const projects = [
     title: "DigiTwin",
     tech: ["React", "Firebase", "GeminiAI"],
     description: "A Digital Replica of a Student",
-    longDescription:
-      "DigiTwin is a virtual digital replica of a student.It models academic behaviour using daily habit inputs . Predicts academic performance trends for 7,15 & 30 Days. Also allows what-if simulation to test habit changes.",
+    longDescription: "DigiTwin is a virtual digital replica of a student.It models academic behaviour using daily habit inputs . Predicts academic performance trends for 7,15 & 30 Days. Also allows what-if simulation to test habit changes.",
     github: "https://github.com/devanshkatkar246/DigiTwin",
     liveDemo: "https://digitwin-1b46b.web.app/",
+  },
+  {
+    id: 6,
+    title: "Dream2Reality",
+    tech: ["Next", "Firebase", "Gemini/Groq"],
+    description: "AI-powered career simulation platform",
+    longDescription:
+      "Dream2Reality is a AI-powered career simulation platform that transforms any dream into a personalized skill roadmap, gap analysis, and live career simulator. Built with Next.js 15.",
+    github: "https://github.com/devanshkatkar246/Dream2Reality-AI",
+    liveDemo: "https://dream2reality-opal.vercel.app/",
   },
 ];
 
