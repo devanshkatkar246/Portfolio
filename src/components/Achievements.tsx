@@ -2,52 +2,40 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    title: "Smart India Hackathon",
-    description: "Participated Twice",
-    year: "2024",
+    title: "Wire Wars",
+    description: "1st Position (Circuit completion competition organized by Dept of Electrical Engineering, PIEMR)",
+    year: "2025",
     color: "from-neon-blue to-cyan-400",
   },
   {
-    title: "Internal SIH 2025",
-    description: "Cleared Internal SIH",
-    year: "2025",
+    title: "Creovate",
+    description: "2nd Position (National Mathematics Day software development competition at PIEMR)",
+    year: "2026",
     color: "from-neon-purple to-pink-500",
   },
   {
-    title: "WireWars",
-    description: "1st Position",
-    year: "2024",
+    title: "CodeStorm",
+    description: "3rd Position (Programming and software development competition organized by AI Club PIEMR)",
+    year: "2026",
     color: "from-green-400 to-emerald-600",
   },
   {
-    title: "GenAI Study Jam",
-    description: "GDG PIEMR",
-    year: "2024",
+    title: "TechSprint Hackathon",
+    description: "Top 10 Finalist (Hackathon organized by GDG PIEMR)",
+    year: "2026",
     color: "from-yellow-400 to-orange-500",
   },
   {
-    title: "Startup Idea Presentation",
-    description: "Udhyamita 6.0",
+    title: "Smart India Hackathon",
+    description: "Participated Twice",
     year: "2024",
     color: "from-red-500 to-rose-600",
   },
   {
-    title: "Creovate 2025",
-    description: "Prestige Institute Of Engineering Management and Research",
+    title: "Internal SIH",
+    description: "Cleared Internal SIH",
     year: "2025",
-    color: "from-yellow-500 to-blue-600",
-  },
-  {
-    title: "TechSprint Hackathon 2025-26",
-    description: "GDG PIEMR",
-    year: "2025-26",
     color: "from-emerald-400 to-blue-600",
-  },
-  {
-    title: "Symbiosis Skill Hackathon 2026",
-    description: "Symbiosis University",
-    year: "2026",
-    color: "from-yellow-500 to-rose-600",
   },
 ];
 

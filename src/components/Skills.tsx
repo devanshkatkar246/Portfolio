@@ -6,17 +6,39 @@ const skillsData = [
     skills: [
       { name: "C++", level: 85 },
       { name: "Python", level: 80 },
-      { name: "JavaScript", level: 70 },
     ],
   },
   {
     category: "Web Development",
     skills: [
-      { name: "HTML/CSS", level: 95 },
+      { name: "HTML/CSS/JS", level: 95 },
       { name: "React (JSX)", level: 85 },
       { name: "Node.js", level: 80 },
       { name: "Express.js", level: 75 },
       { name: "MongoDB", level: 80 },
+    ],
+  },
+  {
+    category: "Artificial Intelligence",
+    skills: [
+      { name: "Machine Learning", level: 90 },
+      { name: "NumPy", level: 85 },
+      { name: "Pandas", level: 95 },
+      { name: "Scikit-learn", level: 85 },
+    ],
+  },
+  {
+    category: "DataBases",
+    skills: [
+      { name: "Firebase", level: 90 },
+      { name: "MongoDB", level: 85 },
+    ],
+  },
+  {
+    category: "Developer Tools",
+    skills: [
+      { name: "Git/Github", level: 90 },
+      { name: "VS Code", level: 85 },
     ],
   },
   {

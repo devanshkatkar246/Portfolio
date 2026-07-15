@@ -35,9 +35,9 @@ function AnimatedCounter({
 export default function About() {
   const stats = [
     { label: "Projects", value: 4, suffix: "+" },
-    { label: "Hackathons", value: 4, suffix: "x" },
-    { label: "Wins", value: 2, suffix: "x" },
-    { label: "Technologies", value: 5, suffix: "+" },
+    { label: "Hackathons", value: 7, suffix: "x" },
+    { label: "Wins", value: 3, suffix: "x" },
+    { label: "Technologies", value: 10, suffix: "+" },
   ];
 
   return (
@@ -98,7 +98,7 @@ export default function About() {
                 B.Tech CSE – IoT & Cyber Security (Including Blockchain)
               </p>
               <p className="text-neon-purple text-sm mt-2 font-mono">
-                2024 – 2028 (Currently 2nd Year)
+                2024 – 2028 (Currently 3rd Year)
               </p>
             </div>
 

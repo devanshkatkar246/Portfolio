@@ -5,42 +5,42 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 const projects = [
   {
     id: 1,
-    title: "3D Shapes Calculator",
-    tech: ["HTML", "CSS", "Python"],
-    description: "Calculates area and volume of various 3D shapes.",
+    title: "Dream2Reality AI",
+    tech: ["React", "Tailwind CSS", "Python", "AI APIs", "Git"],
+    description: "AI-powered career simulation platform",
     longDescription:
-      "A comprehensive tool built to calculate the surface area and volume of complex 3D geometric shapes. It features a clean UI and robust Python backend logic for precise mathematical computations.",
-    github: "/under-construction",
-    liveDemo: "/under-construction",
+      "Developed an AI-powered career simulation platform that helps students explore career paths through personalized recommendations. Built a responsive web application with an intuitive interface and AI-driven recommendation workflow.",
+    github: "https://github.com/devanshkatkar246/Dream2Reality-AI",
+    liveDemo: "https://dream2reality-opal.vercel.app/",
   },
   {
     id: 2,
     title: "Trees & Graph Visualizer",
-    tech: ["Data Structures", "JavaScript", "React"],
+    tech: ["HTML", "CSS", "JavaScript", "DSA"],
     description:
       "Visualizes AVL Trees, BST, and Graph operations interactively.",
     longDescription:
-      "An interactive educational tool that helps students understand complex data structures. It provides real-time step-by-step visualization of operations like insertion, deletion, and traversal in AVL Trees, Binary Search Trees, and various Graph algorithms.",
+      "Designed an interactive visualization tool for AVL Trees, Binary Search Trees, and Graph algorithms. Implemented insertion, deletion, traversal, and visualization to simplify DSA concepts. Built as an educational platform for students preparing for coding interviews.",
     github: "https://github.com/devanshkatkar246/Trees-Graph---Visualization-Platform",
     liveDemo: "/under-construction",
   },
   {
     id: 3,
-    title: "Virtual Herbal Garden",
-    tech: ["MERN Stack", "Three.js"],
-    description: "Conceptual platform to explore medicinal plants digitally.",
+    title: "Developer Portfolio Website",
+    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    description: "Fully responsive developer portfolio.",
     longDescription:
-      "A digital sanctuary for exploring medicinal plants. This platform offers a 3D interactive experience where users can learn about the properties, uses, and cultivation of various herbs in a virtual environment.",
-    github: "/under-construction",
-    liveDemo: "/under-construction",
+      "Developed a fully responsive developer portfolio showcasing projects, leadership experience, and achievements. Implemented a modern UI with mobile-first responsive design. Optimized website performance and accessibility across desktop and mobile devices.",
+    github: "https://github.com/devanshkatkar246/devansh-katkar-portfolio",
+    liveDemo: "/",
   },
   {
     id: 4,
-    title: "Blockchain for Ayurveda",
-    tech: ["Blockchain", "Node.js", "React"],
-    description: "Blockchain-based traceability system for Ayurvedic products.",
+    title: "3D Shapes Calculator",
+    tech: ["HTML", "CSS", "JavaScript", "Python"],
+    description: "Calculates area and volume of various 3D shapes.",
     longDescription:
-      "A supply chain transparency solution ensuring the authenticity of Ayurvedic products. By leveraging blockchain technology, it tracks the journey of ingredients from farm to final product, preventing counterfeiting.",
+      "Developed a web application to calculate area and volume of multiple 3D geometric shapes. Designed a simple and intuitive interface for quick mathematical computations. Applied modular programming principles for maintainable and scalable code.",
     github: "/under-construction",
     liveDemo: "/under-construction",
   },
@@ -52,16 +52,6 @@ const projects = [
     longDescription: "DigiTwin is a virtual digital replica of a student.It models academic behaviour using daily habit inputs . Predicts academic performance trends for 7,15 & 30 Days. Also allows what-if simulation to test habit changes.",
     github: "https://github.com/devanshkatkar246/DigiTwin",
     liveDemo: "https://digitwin-1b46b.web.app/",
-  },
-  {
-    id: 6,
-    title: "Dream2Reality",
-    tech: ["Next", "Firebase", "Gemini/Groq"],
-    description: "AI-powered career simulation platform",
-    longDescription:
-      "Dream2Reality is a AI-powered career simulation platform that transforms any dream into a personalized skill roadmap, gap analysis, and live career simulator. Built with Next.js 15.",
-    github: "https://github.com/devanshkatkar246/Dream2Reality-AI",
-    liveDemo: "https://dream2reality-opal.vercel.app/",
   },
 ];
 

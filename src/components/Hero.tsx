@@ -72,7 +72,7 @@ export default function Hero() {
             View Projects
           </a>
           <a
-            href="/assets/Resume.pdf"
+            href="/assets/DevanshResume.pdf"
             download="Devansh_Katkar_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
