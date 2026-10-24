@@ -19,18 +19,18 @@ const projects: Project[] = [
   {
     id: 1,
     index: "01",
-    category: "AI & SIMULATION",
-    title: "Dream2Reality AI",
-    tech: ["React", "Tailwind CSS", "Python", "AI APIs", "Git"],
-    description: "AI-powered career simulation platform guiding students via adaptive recommendation workflows.",
+    category: "AI & Cybersecurity",
+    title: "KEKAI : Autonomous Brand Intelligence & Impersonation Engine",
+    tech: ["Python, React, AI/ML, Computer Vision, NLP, APIs, Git"],
+    description: "An autonomous cybersecurity platform that detects and analyzes brand impersonation across suspicious domains, webpages, and digital assets.",
     longDescription:
-      "Developed an AI-powered career simulation platform that helps students explore career paths through personalized recommendations. Built a responsive web application with an intuitive interface and AI-driven recommendation workflow.",
-    github: "https://github.com/devanshkatkar246/Dream2Reality-AI",
-    liveDemo: "https://dream2reality-opal.vercel.app/",
+      "KEKAI is an AI-driven cybersecurity platform designed to identify potential brand impersonation threats across digital environments. It combines domain intelligence, visual and logo similarity detection, and contextual analysis to distinguish legitimate brand assets from suspicious ones. The platform generates explainable risk assessments and evidence-based reports, helping investigators understand potential threats and prioritize security investigations.",
+    github: "#",
+    liveDemo: "/under-construction",
     featured: true,
   },
   {
-    id: 5,
+    id: 2,
     index: "02",
     category: "DIGITAL TWIN & LLM",
     title: "DigiTwin",
@@ -43,19 +43,19 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     index: "03",
-    category: "ALGORITHMS & VISUALIZATION",
-    title: "Trees & Graph Visualizer",
-    tech: ["HTML", "CSS", "JavaScript", "DSA"],
-    description: "Interactive visualizer for AVL Trees, BST, and Graph traversals designed for intuitive computer science learning.",
+    category: "Artificial Intelligence and Machine Learning",
+    title: "CineMind: AI-Powered Movie Recommendation System",
+    tech: ["Python, Scikit-learn, Pandas, NumPy, Streamlit, Machine Learning"],
+    description: "An AI-powered movie recommendation platform that delivers personalized suggestions using collaborative and content-based filtering.",
     longDescription:
-      "Designed an interactive visualization tool for AVL Trees, Binary Search Trees, and Graph algorithms. Implemented insertion, deletion, traversal, and visualization to simplify DSA concepts. Built as an educational platform for students preparing for coding interviews.",
-    github: "https://github.com/devanshkatkar246/Trees-Graph---Visualization-Platform",
+      "CineMind is a machine learning-based movie recommendation system designed to help users discover movies tailored to their preferences. It combines collaborative and content-based filtering to generate personalized recommendations based on genres, ratings, and similarity analysis. The project features an interactive Streamlit interface and an end-to-end ML pipeline encompassing data preprocessing, feature engineering, model training, evaluation, and deployment.",
+    github: "https://github.com/devanshkatkar246/CineMind-AI-Movie-Recommendation-System",
     liveDemo: "/under-construction",
   },
   {
-    id: 3,
+    id: 4,
     index: "04",
     category: "FRONTEND ENGINEERING",
     title: "Developer Portfolio Website",
@@ -65,18 +65,6 @@ const projects: Project[] = [
       "Developed a fully responsive developer portfolio showcasing projects, leadership experience, and achievements. Implemented a modern UI with mobile-first responsive design. Optimized website performance and accessibility across desktop and mobile devices.",
     github: "https://github.com/devanshkatkar246/devansh-katkar-portfolio",
     liveDemo: "/",
-  },
-  {
-    id: 4,
-    index: "05",
-    category: "GEOMETRIC COMPUTATION",
-    title: "3D Shapes Calculator",
-    tech: ["HTML", "CSS", "JavaScript", "Python"],
-    description: "Geometric computation suite calculating surface area, volume, and properties of multi-dimensional shapes.",
-    longDescription:
-      "Developed a web application to calculate area and volume of multiple 3D geometric shapes. Designed a simple and intuitive interface for quick mathematical computations. Applied modular programming principles for maintainable and scalable code.",
-    github: "/under-construction",
-    liveDemo: "/under-construction",
   },
 ];
 
@@ -101,7 +89,7 @@ export default function Projects() {
       <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-[#211624]/70 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-3">
@@ -124,9 +112,8 @@ export default function Projects() {
             return (
               <motion.div
                 key={project.id}
-                className={`glass-card p-8 flex flex-col justify-between border border-[#FFDCE8]/15 hover:border-[#FFB5D5]/40 transition-all duration-300 relative group cursor-pointer ${
-                  isFirst ? "md:col-span-2 lg:col-span-2" : ""
-                }`}
+                className={`glass-card p-8 flex flex-col justify-between border border-[#FFDCE8]/15 hover:border-[#FFB5D5]/40 transition-all duration-300 relative group cursor-pointer ${isFirst ? "md:col-span-2 lg:col-span-2" : ""
+                  }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

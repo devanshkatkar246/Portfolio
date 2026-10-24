@@ -140,13 +140,6 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
             >
-              <div className="flex items-center justify-between gap-6 text-[#FFB5D5] font-medium text-[11px] tracking-wider uppercase">
-                <span>MOONLIT SAKURA SANCTUARY</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFB5D5] shadow-[0_0_6px_#FFB5D5]" />
-              </div>
-              <div className="text-[11px] text-[#E1DCEB]/60 font-light">
-                SERENE DUALITY // NATURE &amp; ALGORITHMS
-              </div>
             </motion.div>
           </div>
 

@@ -1,195 +1,325 @@
+import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaLaptopCode, FaBrain, FaDatabase, FaTools, FaUsers } from "react-icons/fa";
+import { IconType } from "react-icons";
+import {
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiGit,
+  SiGithub,
+  SiLinux,
+  SiVite,
+  SiTailwindcss,
+  SiVercel,
+  SiScikitlearn,
+  SiNumpy,
+  SiPandas,
+  SiOpenai,
+  SiGooglegemini,
+  SiLangchain,
+  SiFastapi,
+  SiOpencv,
+  SiPydantic,
+  SiFlask,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiSupabase,
+  SiAmazonwebservices,
+  SiFramer,
+  SiThreedotjs,
+  SiShadcnui,
+  SiDocker,
+  SiGoogle,
+  SiPerplexity,
+  SiClaude,
+  SiNotion,
+  SiCanva,
+  SiFigma,
 
-interface SkillCategory {
-  title: string;
-  icon: typeof FaCode;
-  accent: "sakura" | "blossom" | "rose";
-  skills: { name: string; tag?: string }[];
+}
+  from "react-icons/si";
+import { FaJava, FaBrain } from "react-icons/fa";
+import { TbBrandVscode } from "react-icons/tb";
+
+export interface TechNode {
+  name: string;
+  icon: IconType;
+  tag?: string;
 }
 
-const skillCategories: SkillCategory[] = [
-  {
-    title: "Programming",
-    icon: FaCode,
-    accent: "sakura",
-    skills: [
-      { name: "C++", tag: "DSA & Systems" },
-      { name: "Python", tag: "AI & Scripting" },
-      { name: "JavaScript / ES6+", tag: "Full-Stack" },
-    ],
-  },
-  {
-    title: "Web Development",
-    icon: FaLaptopCode,
-    accent: "blossom",
-    skills: [
-      { name: "React", tag: "Frontend" },
-      { name: "Node.js", tag: "Runtime" },
-      { name: "Express.js", tag: "API Backend" },
-      { name: "Tailwind CSS", tag: "Styling" },
-      { name: "HTML5 / Modern CSS", tag: "Foundation" },
-    ],
-  },
-  {
-    title: "Artificial Intelligence",
-    icon: FaBrain,
-    accent: "sakura",
-    skills: [
-      { name: "Machine Learning", tag: "Models & Algorithms" },
-      { name: "Scikit-Learn", tag: "Model Training" },
-      { name: "Pandas", tag: "Data Analysis" },
-      { name: "NumPy", tag: "Numerical Matrix" },
-      { name: "Gemini / OpenAI APIs", tag: "LLM Integration" },
-    ],
-  },
-  {
-    title: "Databases & Cloud",
-    icon: FaDatabase,
-    accent: "rose",
-    skills: [
-      { name: "MongoDB", tag: "NoSQL" },
-      { name: "Firebase", tag: "Real-time DB & Auth" },
-      { name: "AWS Fundamentals", tag: "Cloud Infrastructure" },
-    ],
-  },
-  {
-    title: "Developer Tools",
-    icon: FaTools,
-    accent: "blossom",
-    skills: [
-      { name: "Git & GitHub", tag: "Version Control" },
-      { name: "VS Code", tag: "Environment" },
-      { name: "Vite", tag: "Build Tooling" },
-      { name: "Linux CLI", tag: "Shell Operations" },
-    ],
-  },
-  {
-    title: "Core Strengths",
-    icon: FaUsers,
-    accent: "sakura",
-    skills: [
-      { name: "Problem Solving", tag: "Algorithmic" },
-      { name: "Leadership", tag: "DevLeague Founder" },
-      { name: "Team Collaboration", tag: "Hackathons" },
-      { name: "Creative Thinking", tag: "Product Ideation" },
-      { name: "Fast Adaptability", tag: "Emerging Tech" },
-    ],
-  },
+// Lane 1: Core Systems, Languages & Foundational Tooling
+const lane1Technologies: TechNode[] = [
+  { name: "C++", icon: SiCplusplus, tag: "DSA & Systems" },
+  { name: "Python", icon: SiPython, tag: "AI & Scripting" },
+  { name: "TypeScript", icon: SiTypescript, tag: "Full-Stack" },
+  { name: "JavaScript", icon: SiJavascript, tag: "ES6+ Runtime" },
+  { name: "HTML5", icon: SiHtml5, tag: "Semantic Web" },
+  { name: "CSS3", icon: SiCss3, tag: "Modern Styling" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, tag: "Utility CSS" },
+  { name: "Git", icon: SiGit, tag: "Version Control" },
+  { name: "GitHub", icon: SiGithub, tag: "Collaboration" },
+  { name: "Linux CLI", icon: SiLinux, tag: "Shell Operations" },
+  { name: "VS Code", icon: TbBrandVscode, tag: "Editor" },
+  { name: "Vercel", icon: SiVercel, tag: "Deployment" },
+  { name: "Docker", icon: SiDocker, tag: "Containerization" },
+
 ];
+
+// Lane 2: Artificial Intelligence, Machine Learning & Computational Data
+const lane2Technologies: TechNode[] = [
+  { name: "Machine Learning", icon: FaBrain, tag: "Core Models" },
+  { name: "Scikit-Learn", icon: SiScikitlearn, tag: "Model Training" },
+  { name: "NumPy", icon: SiNumpy, tag: "Array Compute" },
+  { name: "Pandas", icon: SiPandas, tag: "Data Analysis" },
+  { name: "Generative AI", icon: FaBrain, tag: "Prompt Architecture" },
+  { name: "LangChain", icon: SiLangchain, tag: "Agentic Chains" },
+  { name: "FastAPI", icon: SiFastapi, tag: "High-Perf API" },
+  { name: "OpenCV", icon: SiOpencv, tag: "Computer Vision" },
+  { name: "Pydantic", icon: SiPydantic, tag: "Data Validation" },
+  { name: "Flask", icon: SiFlask, tag: "Microframework" },
+];
+
+// Lane 3: Web Architectures, Databases & Cloud Infrastructure
+const lane3Technologies: TechNode[] = [
+  { name: "React", icon: SiReact, tag: "UI Architecture" },
+  { name: "Next.js", icon: SiNextdotjs, tag: "Full-Stack SSR" },
+  { name: "Node.js", icon: SiNodedotjs, tag: "Backend Runtime" },
+  { name: "Express.js", icon: SiExpress, tag: "REST Services" },
+  { name: "MongoDB", icon: SiMongodb, tag: "Document NoSQL" },
+  { name: "PostgreSQL", icon: SiPostgresql, tag: "Relational SQL" },
+  { name: "Firebase", icon: SiFirebase, tag: "Real-time DB & Auth" },
+  { name: "Supabase", icon: SiSupabase, tag: "Postgres Cloud" },
+  { name: "AWS", icon: SiAmazonwebservices, tag: "Cloud Infrastructure" },
+  { name: "Framer Motion", icon: SiFramer, tag: "Motion Design" },
+];
+// Lane 4 VIBE CODING
+const lane4Technologies: TechNode[] = [
+  { name: "OpenAI", icon: SiOpenai, tag: "API Integration" },
+  { name: "Google Gemini", icon: SiGooglegemini, tag: "API Integration" },
+  { name: "Antigravity", icon: SiGoogle, tag: "IDE" },
+  { name: "Claude", icon: SiClaude, tag: "Research" },
+  { name: "Perplexity", icon: SiPerplexity, tag: "Research" },
+  { name: "Notion", icon: SiNotion, tag: "Documentation" },
+  { name: "Figma", icon: SiFigma, tag: "UI Designing" },
+  { name: "Canva", icon: SiCanva, tag: "Presentations and Posters" },
+
+];
+
+interface LeafNodeProps {
+  tech: TechNode;
+  flipped?: boolean;
+}
+
+function LeafNode({ tech, flipped = false }: LeafNodeProps) {
+  const Icon = tech.icon;
+
+  return (
+    <div
+      tabIndex={0}
+      role="group"
+      aria-label={`${tech.name} technology node`}
+      className={`group/leaf relative flex items-center gap-3.5 px-5 py-3 h-14 min-w-max select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A6CC] leaf-node ${flipped ? "!rounded-[8px_28px_8px_28px]" : ""
+        }`}
+    >
+      {/* Decorative delicate botanical leaf vein SVG */}
+      <svg
+        className="absolute top-1.5 right-2 w-8 h-8 pointer-events-none opacity-20 group-hover/leaf:opacity-40 transition-opacity"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M4 28C10 20 18 12 28 4M28 4C23 7 19 12 18 18M28 4C22 10 16 13 10 14"
+          stroke="#F5A6CC"
+          strokeWidth="0.8"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      {/* Technology Icon with glowing illumination */}
+      <div className="p-2 rounded-xl bg-white/5 border border-white/10 text-[#F5A6CC] group-hover/leaf:text-[#FFD0E5] group-hover/leaf:bg-[#F5A6CC]/15 group-hover/leaf:border-[#F5A6CC]/40 transition-all duration-300 shadow-[0_2px_8px_rgba(245,166,204,0.1)]">
+        <Icon size={18} />
+      </div>
+
+      {/* Technology Name */}
+      <div className="flex flex-col">
+        <span className="font-body text-sm font-medium tracking-wide text-[#F7F5FF] group-hover/leaf:text-white transition-colors">
+          {tech.name}
+        </span>
+      </div>
+
+      {/* Ambient leaf tip blossom accent dot */}
+      <span className="w-1.5 h-1.5 rounded-full bg-[#F5A6CC]/40 group-hover/leaf:bg-[#F5A6CC] group-hover/leaf:shadow-[0_0_8px_#F5A6CC] transition-all ml-1" />
+    </div>
+  );
+}
+
+interface BeltLaneProps {
+  label: string;
+  technologies: TechNode[];
+  direction: "left" | "right";
+  durationSeconds: number;
+  flippedLeaf?: boolean;
+}
+
+function TechBeltLane({
+  label,
+  technologies,
+  direction,
+  durationSeconds,
+  flippedLeaf = false,
+}: BeltLaneProps) {
+  const marqueeClass =
+    direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
+
+  return (
+    <div className="relative mb-6 last:mb-0">
+      {/* Category Lane Header Label */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-2 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#F5A6CC]/60" />
+        <span className="text-[11px] font-semibold tracking-widest text-[#B7B6C7]/70 uppercase font-body">
+          {label}
+        </span>
+      </div>
+
+      {/* Overflow Container with Left & Right Atmospheric Gradient Vignettes */}
+      <div className="relative w-full overflow-hidden pause-marquee py-2">
+        {/* Left edge shadow vignette */}
+        <div
+          className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 z-20 bg-gradient-to-r from-[#111323] via-[#111323]/80 to-transparent"
+          aria-hidden="true"
+        />
+        {/* Right edge shadow vignette */}
+        <div
+          className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 z-20 bg-gradient-to-l from-[#111323] via-[#111323]/80 to-transparent"
+          aria-hidden="true"
+        />
+
+        {/* Continuous Infinite Marquee Track */}
+        <div
+          className={`${marqueeClass} gap-4 sm:gap-5 px-3`}
+          style={{ "--speed": `${durationSeconds}s` } as React.CSSProperties}
+        >
+          {/* Primary Sequence (Accessible to screen readers and keyboard navigation) */}
+          <div className="flex gap-4 sm:gap-5">
+            {technologies.map((tech) => (
+              <LeafNode
+                key={`primary-${tech.name}`}
+                tech={tech}
+                flipped={flippedLeaf}
+              />
+            ))}
+          </div>
+
+          {/* Duplicated Sequence for seamless loop (hidden from assistive tech) */}
+          <div className="flex gap-4 sm:gap-5" aria-hidden="true">
+            {technologies.map((tech) => (
+              <LeafNode
+                key={`dup-${tech.name}`}
+                tech={tech}
+                flipped={flippedLeaf}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 relative bg-[#121426] scroll-mt-20 font-body">
+    <section
+      id="skills"
+      aria-label="Technologies & Skills"
+      className="py-28 lg:py-32 relative bg-[#111323] scroll-mt-20 overflow-hidden font-body text-[#F7F5FF]"
+    >
       {/* Background radial atmosphere */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#FFB5D5]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#211624]/60 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 -right-10 w-96 h-96 bg-[#F5A6CC]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 -left-10 w-96 h-96 bg-[#17192B]/80 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="mb-20">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="font-body text-xs text-[#D991B5] uppercase tracking-widest font-semibold">02 // CAPABILITIES</span>
-            <div className="h-px w-12 bg-[#D991B5]/30" />
-          </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F8F5FF] mb-4">
-            Technical stack &amp; <span className="text-[#FFB5D5]">engineering domains.</span>
-          </h2>
-          <p className="text-[#E1DCEB] max-w-xl text-base sm:text-lg">
-            Practical competencies tested through high-velocity hackathons, academic rigor, and production software.
-          </p>
-        </div>
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 lg:mb-20">
+        <motion.div
+          className="flex items-center gap-2 mb-3"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
+          <span className="text-xs uppercase tracking-widest font-semibold text-[#F5A6CC]">
+            02 // CAPABILITIES
+          </span>
+          <div className="h-px w-12 bg-[#F5A6CC]/30" />
+        </motion.div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {skillCategories.map((category, idx) => {
-            const Icon = category.icon;
-            const isSakura = category.accent === "sakura";
-            const isBlossom = category.accent === "blossom";
+        <motion.h2
+          className="font-display font-bold tracking-tight text-[#F7F5FF] leading-[1.14] text-3xl sm:text-4xl lg:text-[clamp(2.25rem,4vw,3.5rem)] mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          The <span className="text-[#F5A6CC]">technologies</span> behind my work.
+        </motion.h2>
 
-            return (
-              <motion.div
-                key={category.title}
-                className="glass-card p-7 flex flex-col justify-between border border-[#FFDCE8]/15 hover:border-[#FFB5D5]/35 transition-all duration-300 relative group overflow-hidden"
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                whileHover={{ y: -4 }}
-              >
-                {/* Top subtle hover accent line */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    isSakura ? "bg-[#FFB5D5]" : isBlossom ? "bg-[#F5C2DA]" : "bg-[#D991B5]"
-                  }`}
-                />
+        <motion.p
+          className="text-[#B7B6C7] max-w-xl text-base sm:text-lg leading-relaxed font-normal"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Languages, frameworks, and tools I use to turn ideas into working systems.
+        </motion.p>
+      </div>
 
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`p-2.5 rounded-xl bg-white/5 border border-[#FFDCE8]/15 ${
-                          isSakura
-                            ? "text-[#FFB5D5]"
-                            : isBlossom
-                            ? "text-[#F5C2DA]"
-                            : "text-[#D991B5]"
-                        }`}
-                      >
-                        <Icon size={18} />
-                      </div>
-                      <h3 className="font-display font-bold text-lg text-[#F8F5FF] group-hover:text-white transition-colors">
-                        {category.title}
-                      </h3>
-                    </div>
+      {/* Living Animated Tech Belts (3 Distinct Lanes with Multi-Directional Organic Flow) */}
+      <div className="w-full relative space-y-4">
+        {/* Lane 1: Systems & Languages (Flowing Left) */}
+        <TechBeltLane
+          label="Systems, Languages & Tooling"
+          technologies={lane1Technologies}
+          direction="left"
+          durationSeconds={42}
+          flippedLeaf={false}
+        />
 
-                    <span className="font-body text-xs text-[#E1DCEB]/50 font-medium">
-                      0{idx + 1}
-                    </span>
-                  </div>
+        {/* Lane 2: AI, Machine Learning & Intelligence (Flowing Right) */}
+        <TechBeltLane
+          label="Intelligence, AI & Machine Learning"
+          technologies={lane2Technologies}
+          direction="right"
+          durationSeconds={48}
+          flippedLeaf={true}
+        />
 
-                  {/* Skills tags/chips */}
-                  <div className="flex flex-wrap gap-2.5">
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="group/chip inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#181a30] border border-[#FFDCE8]/12 hover:border-[#FFB5D5]/30 transition-all duration-200"
-                      >
-                        <span className="text-xs font-medium text-[#F8F5FF]">
-                          {skill.name}
-                        </span>
-                        {skill.tag && (
-                          <span
-                            className={`text-[10px] font-body px-1.5 py-0.5 rounded ${
-                              isSakura
-                                ? "bg-[#FFB5D5]/10 text-[#FFB5D5]"
-                                : isBlossom
-                                ? "bg-[#F5C2DA]/10 text-[#F5C2DA]"
-                                : "bg-[#D991B5]/10 text-[#D991B5]"
-                            }`}
-                          >
-                            {skill.tag}
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+        {/* Lane 3: Web Architectures & Cloud Infrastructure (Flowing Left) */}
+        <TechBeltLane
+          label="Web Architectures, Databases & Cloud"
+          technologies={lane3Technologies}
+          direction="left"
+          durationSeconds={38}
+          flippedLeaf={false}
+        />
+        {/* Lane 4: AI, Machine Learning & Intelligence (Flowing Right) */}
+        <TechBeltLane
+          label="Generative & Agentic AI Tools"
+          technologies={lane4Technologies}
+          direction="right"
+          durationSeconds={48}
+          flippedLeaf={true}
+        />
 
-                {/* Card footer indicator */}
-                <div className="mt-8 pt-4 border-t border-[#FFDCE8]/10 flex items-center justify-between text-[11px] font-body text-[#E1DCEB]/60">
-                  <span>{category.skills.length} VERIFIED COMPETENCIES</span>
-                  <div
-                    className={`w-1.5 h-1.5 rounded-full ${
-                      isSakura ? "bg-[#FFB5D5]" : isBlossom ? "bg-[#F5C2DA]" : "bg-[#D991B5]"
-                    }`}
-                  />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
 
       </div>
     </section>
