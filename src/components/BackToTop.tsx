@@ -7,14 +7,10 @@ export default function BackToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 400);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -29,13 +25,15 @@ export default function BackToTop() {
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
+          type="button"
+          aria-label="Scroll back to top"
+          initial={{ opacity: 0, scale: 0.8, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 10 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-glass backdrop-blur-md border border-neon-blue rounded-full text-neon-blue hover:bg-neon-blue hover:text-black transition-colors z-40 glow-blue"
+          className="fixed bottom-8 right-8 p-3.5 bg-[#181a30]/90 backdrop-blur-md border border-[#FFB5D5]/35 rounded-full text-[#FFB5D5] hover:bg-[#FFB5D5] hover:text-[#121426] transition-all duration-300 z-40 shadow-[0_4px_20px_rgba(18,20,36,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB5D5] cursor-pointer"
         >
-          <FaArrowUp />
+          <FaArrowUp size={14} />
         </motion.button>
       )}
     </AnimatePresence>

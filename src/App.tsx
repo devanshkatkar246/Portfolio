@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -20,7 +20,8 @@ import CustomCursor from "./components/CustomCursor";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import BackToTop from "./components/BackToTop";
 import { Routes, Route } from "react-router-dom";
-import UnderConstruction from "./components/UnderConstruction";
+
+const UnderConstruction = lazy(() => import("./components/UnderConstruction"));
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -32,28 +33,44 @@ export default function App() {
       </AnimatePresence>
 
       {!loading && (
-        <div className="relative selection:bg-neon-purple/30 selection:text-neon-blue">
+        <div className="relative bg-[#121426] text-[#F8F5FF] selection:bg-[#FFB5D5]/30 selection:text-[#F8F5FF] min-h-screen font-body">
           <CustomCursor />
           <ScrollProgressBar />
           <Routes>
-            <Route path="/" element={
-              <>
-                <Navbar />
-                <main>
-                  <Hero />
-                  <About />
-                  <Skills />
-                  <Experience />
-                  <Projects />
-                  <Achievements />
-                  <Certifications />
-                  <Contact />
-                </main>
-                <Footer />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/under-construction" element={<UnderConstruction />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Navbar />
+                  <main id="main-content">
+                    <Hero />
+                    <About />
+                    <Skills />
+                    <Experience />
+                    <Projects />
+                    <Achievements />
+                    <Certifications />
+                    <Contact />
+                  </main>
+                  <Footer />
+                  <BackToTop />
+                </>
+              }
+            />
+            <Route
+              path="/under-construction"
+              element={
+                <Suspense
+                  fallback={
+                    <div className="w-full h-screen bg-[#121426] flex items-center justify-center font-body text-xs text-[#E1DCEB]/60">
+                      [ LOADING SANCTUARY MODULE... ]
+                    </div>
+                  }
+                >
+                  <UnderConstruction />
+                </Suspense>
+              }
+            />
           </Routes>
         </div>
       )}

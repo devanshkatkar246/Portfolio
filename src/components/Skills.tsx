@@ -1,118 +1,196 @@
 import { motion } from "framer-motion";
+import { FaCode, FaLaptopCode, FaBrain, FaDatabase, FaTools, FaUsers } from "react-icons/fa";
 
-const skillsData = [
+interface SkillCategory {
+  title: string;
+  icon: typeof FaCode;
+  accent: "sakura" | "blossom" | "rose";
+  skills: { name: string; tag?: string }[];
+}
+
+const skillCategories: SkillCategory[] = [
   {
-    category: "Programming",
+    title: "Programming",
+    icon: FaCode,
+    accent: "sakura",
     skills: [
-      { name: "C++", level: 85 },
-      { name: "Python", level: 80 },
+      { name: "C++", tag: "DSA & Systems" },
+      { name: "Python", tag: "AI & Scripting" },
+      { name: "JavaScript / ES6+", tag: "Full-Stack" },
     ],
   },
   {
-    category: "Web Development",
+    title: "Web Development",
+    icon: FaLaptopCode,
+    accent: "blossom",
     skills: [
-      { name: "HTML/CSS/JS", level: 95 },
-      { name: "React (JSX)", level: 85 },
-      { name: "Node.js", level: 80 },
-      { name: "Express.js", level: 75 },
-      { name: "MongoDB", level: 80 },
+      { name: "React", tag: "Frontend" },
+      { name: "Node.js", tag: "Runtime" },
+      { name: "Express.js", tag: "API Backend" },
+      { name: "Tailwind CSS", tag: "Styling" },
+      { name: "HTML5 / Modern CSS", tag: "Foundation" },
     ],
   },
   {
-    category: "Artificial Intelligence",
+    title: "Artificial Intelligence",
+    icon: FaBrain,
+    accent: "sakura",
     skills: [
-      { name: "Machine Learning", level: 90 },
-      { name: "NumPy", level: 85 },
-      { name: "Pandas", level: 95 },
-      { name: "Scikit-learn", level: 85 },
+      { name: "Machine Learning", tag: "Models & Algorithms" },
+      { name: "Scikit-Learn", tag: "Model Training" },
+      { name: "Pandas", tag: "Data Analysis" },
+      { name: "NumPy", tag: "Numerical Matrix" },
+      { name: "Gemini / OpenAI APIs", tag: "LLM Integration" },
     ],
   },
   {
-    category: "DataBases",
+    title: "Databases & Cloud",
+    icon: FaDatabase,
+    accent: "rose",
     skills: [
-      { name: "Firebase", level: 90 },
-      { name: "MongoDB", level: 85 },
+      { name: "MongoDB", tag: "NoSQL" },
+      { name: "Firebase", tag: "Real-time DB & Auth" },
+      { name: "AWS Fundamentals", tag: "Cloud Infrastructure" },
     ],
   },
   {
-    category: "Developer Tools",
+    title: "Developer Tools",
+    icon: FaTools,
+    accent: "blossom",
     skills: [
-      { name: "Git/Github", level: 90 },
-      { name: "VS Code", level: 85 },
+      { name: "Git & GitHub", tag: "Version Control" },
+      { name: "VS Code", tag: "Environment" },
+      { name: "Vite", tag: "Build Tooling" },
+      { name: "Linux CLI", tag: "Shell Operations" },
     ],
   },
   {
-    category: "Core Strengths",
+    title: "Core Strengths",
+    icon: FaUsers,
+    accent: "sakura",
     skills: [
-      { name: "Problem Solving", level: 90 },
-      { name: "Leadership", level: 85 },
-      { name: "Team Collaboration", level: 95 },
-      { name: "Creative Thinking", level: 85 },
-      { name: "Adaptability", level: 90 },
+      { name: "Problem Solving", tag: "Algorithmic" },
+      { name: "Leadership", tag: "DevLeague Founder" },
+      { name: "Team Collaboration", tag: "Hackathons" },
+      { name: "Creative Thinking", tag: "Product Ideation" },
+      { name: "Fast Adaptability", tag: "Emerging Tech" },
     ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative bg-dark-bg/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="text-neon-purple">Skills</span>
-          </h2>
-          <div className="w-24 h-1 bg-linear-to-r from-neon-blue to-neon-purple mx-auto rounded-full" />
-        </motion.div>
+    <section id="skills" className="py-28 relative bg-[#121426] scroll-mt-20 font-body">
+      {/* Background radial atmosphere */}
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#FFB5D5]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#211624]/60 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillsData.map((category, catIndex) => (
-            <motion.div
-              key={category.category}
-              className="glass-card p-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIndex * 0.2 }}
-              whileHover={{
-                scale: 1.02,
-                boxShadow: "0 0 20px rgba(176, 38, 255, 0.2)",
-              }}
-            >
-              <h3 className="text-2xl font-bold text-neon-blue mb-6">
-                {category.category}
-              </h3>
-              <div className="space-y-6">
-                {category.skills.map((skill, index) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-300 font-medium">
-                        {skill.name}
-                      </span>
-                      <span className="text-neon-purple font-mono text-sm">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-linear-to-r from-neon-blue to-neon-purple"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="mb-20">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="font-body text-xs text-[#D991B5] uppercase tracking-widest font-semibold">02 // CAPABILITIES</span>
+            <div className="h-px w-12 bg-[#D991B5]/30" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F8F5FF] mb-4">
+            Technical stack &amp; <span className="text-[#FFB5D5]">engineering domains.</span>
+          </h2>
+          <p className="text-[#E1DCEB] max-w-xl text-base sm:text-lg">
+            Practical competencies tested through high-velocity hackathons, academic rigor, and production software.
+          </p>
         </div>
+
+        {/* Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {skillCategories.map((category, idx) => {
+            const Icon = category.icon;
+            const isSakura = category.accent === "sakura";
+            const isBlossom = category.accent === "blossom";
+
+            return (
+              <motion.div
+                key={category.title}
+                className="glass-card p-7 flex flex-col justify-between border border-[#FFDCE8]/15 hover:border-[#FFB5D5]/35 transition-all duration-300 relative group overflow-hidden"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -4 }}
+              >
+                {/* Top subtle hover accent line */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isSakura ? "bg-[#FFB5D5]" : isBlossom ? "bg-[#F5C2DA]" : "bg-[#D991B5]"
+                  }`}
+                />
+
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`p-2.5 rounded-xl bg-white/5 border border-[#FFDCE8]/15 ${
+                          isSakura
+                            ? "text-[#FFB5D5]"
+                            : isBlossom
+                            ? "text-[#F5C2DA]"
+                            : "text-[#D991B5]"
+                        }`}
+                      >
+                        <Icon size={18} />
+                      </div>
+                      <h3 className="font-display font-bold text-lg text-[#F8F5FF] group-hover:text-white transition-colors">
+                        {category.title}
+                      </h3>
+                    </div>
+
+                    <span className="font-body text-xs text-[#E1DCEB]/50 font-medium">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  {/* Skills tags/chips */}
+                  <div className="flex flex-wrap gap-2.5">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="group/chip inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#181a30] border border-[#FFDCE8]/12 hover:border-[#FFB5D5]/30 transition-all duration-200"
+                      >
+                        <span className="text-xs font-medium text-[#F8F5FF]">
+                          {skill.name}
+                        </span>
+                        {skill.tag && (
+                          <span
+                            className={`text-[10px] font-body px-1.5 py-0.5 rounded ${
+                              isSakura
+                                ? "bg-[#FFB5D5]/10 text-[#FFB5D5]"
+                                : isBlossom
+                                ? "bg-[#F5C2DA]/10 text-[#F5C2DA]"
+                                : "bg-[#D991B5]/10 text-[#D991B5]"
+                            }`}
+                          >
+                            {skill.tag}
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Card footer indicator */}
+                <div className="mt-8 pt-4 border-t border-[#FFDCE8]/10 flex items-center justify-between text-[11px] font-body text-[#E1DCEB]/60">
+                  <span>{category.skills.length} VERIFIED COMPETENCIES</span>
+                  <div
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      isSakura ? "bg-[#FFB5D5]" : isBlossom ? "bg-[#F5C2DA]" : "bg-[#D991B5]"
+                    }`}
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

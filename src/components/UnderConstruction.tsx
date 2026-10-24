@@ -1,147 +1,63 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Text3D, Center, Float, Environment, ContactShadows, useMatcapTexture } from "@react-three/drei";
-import { useRef } from "react";
-import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-function Barrier({ position, rotation }: { position: [number, number, number], rotation: [number, number, number] }) {
-    return (
-        <group position={position} rotation={rotation}>
-            {/* Main Board */}
-            <mesh position={[0, 0.5, 0]}>
-                <boxGeometry args={[3, 0.5, 0.1]} />
-                <meshStandardMaterial color="#fcd34d" />
-            </mesh>
-            {/* Stripes */}
-            <mesh position={[0, 0.5, 0.06]}>
-                <planeGeometry args={[2.8, 0.3]} />
-                <meshStandardMaterial color="#ef4444" />
-            </mesh>
-
-            {/* Legs */}
-            <mesh position={[-1.2, 0, 0]} rotation={[0, 0, 0.2]}>
-                <boxGeometry args={[0.1, 1.5, 0.1]} />
-                <meshStandardMaterial color="#333" />
-            </mesh>
-            <mesh position={[1.2, 0, 0]} rotation={[0, 0, -0.2]}>
-                <boxGeometry args={[0.1, 1.5, 0.1]} />
-                <meshStandardMaterial color="#333" />
-            </mesh>
-        </group>
-    );
-}
-
-function ConstructionSign() {
-    const signRef = useRef<THREE.Group>(null);
-
-    useFrame((state) => {
-        if (signRef.current) {
-            signRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-        }
-    });
-
-    return (
-        <group ref={signRef}>
-            <Float speed={2} rotationIntensity={0.2} floatIntensity={1}>
-                <Center position={[0, 1.5, 0]}>
-                    <Text3D
-                        font="https://unpkg.com/three@0.150.1/examples/fonts/helvetiker_regular.typeface.json"
-                        size={0.8}
-                        height={0.2}
-                        curveSegments={12}
-                        bevelEnabled
-                        bevelThickness={0.02}
-                        bevelSize={0.02}
-                        bevelOffset={0}
-                        bevelSegments={5}
-                    >
-                        UNDER
-                        <meshStandardMaterial color="#facc15" metalness={0.5} roughness={0.2} />
-                    </Text3D>
-                </Center>
-                <Center position={[0, 0.4, 0]}>
-                    <Text3D
-                        font="https://unpkg.com/three@0.150.1/examples/fonts/helvetiker_regular.typeface.json"
-                        size={0.6}
-                        height={0.2}
-                        curveSegments={12}
-                        bevelEnabled
-                        bevelThickness={0.02}
-                        bevelSize={0.02}
-                        bevelOffset={0}
-                        bevelSegments={5}
-                    >
-                        CONSTRUCTION
-                        <meshStandardMaterial color="#f97316" metalness={0.5} roughness={0.2} />
-                    </Text3D>
-                </Center>
-            </Float>
-
-            {/* Adding some barriers around */}
-            <Barrier position={[-2.5, -1, 1]} rotation={[0, Math.PI / 4, 0]} />
-            <Barrier position={[2.5, -1, 1]} rotation={[0, -Math.PI / 4, 0]} />
-
-            {/* Cones */}
-            <mesh position={[-1.5, -1.5, 2]}>
-                <coneGeometry args={[0.3, 0.8, 16]} />
-                <meshStandardMaterial color="#f97316" />
-            </mesh>
-            <mesh position={[1.5, -1.5, 2]}>
-                <coneGeometry args={[0.3, 0.8, 16]} />
-                <meshStandardMaterial color="#f97316" />
-            </mesh>
-        </group>
-    );
-}
+import { FaArrowLeft } from "react-icons/fa";
+import SakuraPetals from "./SakuraPetals";
 
 export default function UnderConstruction() {
-    return (
-        <div className="w-full h-screen bg-dark-bg relative overflow-hidden flex flex-col items-center justify-center">
-            {/* Background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-neon-purple/10 blur-[120px] rounded-full pointer-events-none" />
+  return (
+    <div className="w-full min-h-screen bg-[#121426] relative overflow-hidden flex flex-col items-center justify-center p-6 font-body">
+      {/* Background Anime Landscape underlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/assests/Moonlit%20Sakura%20Valley%20Waterfalls.png')",
+        }}
+      />
 
-            <div className="w-full h-[60vh] md:h-[70vh] cursor-grab active:cursor-grabbing z-10">
-                <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-                    <ambientLight intensity={0.5} />
-                    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-                    <pointLight position={[-10, -10, -10]} intensity={0.5} />
+      {/* Atmospheric Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#121426] via-[#121426]/80 to-[#121426] pointer-events-none" />
 
-                    <ConstructionSign />
+      {/* Ambient Sakura Petal Layer */}
+      <SakuraPetals />
 
-                    <Environment preset="city" />
-                    <ContactShadows position={[0, -2, 0]} opacity={0.5} scale={15} blur={2} far={4} />
-                    <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 3} />
-                </Canvas>
-            </div>
+      {/* Subtle Glow Accents */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#FFB5D5]/10 blur-[150px] rounded-full pointer-events-none" />
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="z-20 text-center px-4 -mt-10"
-            >
-                <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent mb-4">
-                    We're Building Something Awesome
-                </h2>
-                <p className="text-gray-400 mb-8 max-w-md mx-auto">
-                    This page is currently under development. Check back soon for exciting updates!
-                </p>
-
-                <Link
-                    to="/"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all hover:scale-105"
-                >
-                    <span>Return Home</span>
-                </Link>
-            </motion.div>
-
-            {/* Animated stripes background */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
-                style={{
-                    backgroundImage: "repeating-linear-gradient(45deg, #000 0px, #000 20px, #fff 20px, #fff 40px)"
-                }}
-            />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="z-20 text-center max-w-xl mx-auto glass-card p-10 sm:p-12 border border-[#FFDCE8]/20 shadow-[0_20px_50px_rgba(18,20,36,0.8)]"
+      >
+        {/* Monogram / Brand mark */}
+        <div className="flex items-center justify-center gap-1.5 mb-6">
+          <span className="font-display text-3xl font-black tracking-tight text-[#F8F5FF]">
+            DK
+          </span>
+          <span className="w-2 h-2 rounded-full bg-[#FFB5D5] shadow-[0_0_8px_#FFB5D5]" />
         </div>
-    );
+
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold text-[#FFB5D5] bg-[#FFB5D5]/10 border border-[#FFB5D5]/25 mb-6 uppercase tracking-wider">
+          <span>WORK IN PROGRESS // ARCHITECTURE</span>
+        </div>
+
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#F8F5FF] mb-4 tracking-tight leading-tight">
+          System Module <br />
+          <span className="text-[#FFB5D5]">Under Construction</span>
+        </h1>
+
+        <p className="text-[#E1DCEB] mb-8 leading-relaxed text-sm sm:text-base font-normal">
+          This feature is currently undergoing active engineering and algorithmic refinement. Check back shortly for deployment updates.
+        </p>
+
+        <Link
+          to="/"
+          className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#F5C2DA] text-[#211624] hover:bg-white text-xs font-semibold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(245,194,218,0.3)] transition-all duration-300 group"
+        >
+          <FaArrowLeft className="text-xs group-hover:-translate-x-1 transition-transform" />
+          <span>RETURN TO PORTFOLIO</span>
+        </Link>
+      </motion.div>
+    </div>
+  );
 }
