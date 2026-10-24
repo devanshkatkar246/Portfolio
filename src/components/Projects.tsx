@@ -21,11 +21,11 @@ const projects: Project[] = [
     index: "01",
     category: "AI & Cybersecurity",
     title: "KEKAI : Autonomous Brand Intelligence & Impersonation Engine",
-    tech: ["Python, React, AI/ML, Computer Vision, NLP, APIs, Git"],
+    tech: ["Python", "React", "AI/ML", "Computer Vision", "NLP", "APIs", "Git"],
     description: "An autonomous cybersecurity platform that detects and analyzes brand impersonation across suspicious domains, webpages, and digital assets.",
     longDescription:
       "KEKAI is an AI-driven cybersecurity platform designed to identify potential brand impersonation threats across digital environments. It combines domain intelligence, visual and logo similarity detection, and contextual analysis to distinguish legitimate brand assets from suspicious ones. The platform generates explainable risk assessments and evidence-based reports, helping investigators understand potential threats and prioritize security investigations.",
-    github: "#",
+    github: "https://github.com/devanshkatkar246/KEKAI-Autonomous-Brand-Intelligence-Impersonation-Engine",
     liveDemo: "/under-construction",
     featured: true,
   },
@@ -47,7 +47,7 @@ const projects: Project[] = [
     index: "03",
     category: "Artificial Intelligence and Machine Learning",
     title: "CineMind: AI-Powered Movie Recommendation System",
-    tech: ["Python, Scikit-learn, Pandas, NumPy, Streamlit, Machine Learning"],
+    tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "Machine Learning"],
     description: "An AI-powered movie recommendation platform that delivers personalized suggestions using collaborative and content-based filtering.",
     longDescription:
       "CineMind is a machine learning-based movie recommendation system designed to help users discover movies tailored to their preferences. It combines collaborative and content-based filtering to generate personalized recommendations based on genres, ratings, and similarity analysis. The project features an interactive Streamlit interface and an end-to-end ML pipeline encompassing data preprocessing, feature engineering, model training, evaluation, and deployment.",
